@@ -30,6 +30,7 @@ jobs:
         run: ./mvnw -B package
 
   deploy:
+    needs: build  
     steps:
       - name: Report Deploy
         uses: OpsLevel/report-deploy-github-action@v0.5.0
