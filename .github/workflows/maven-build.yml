@@ -30,6 +30,7 @@ jobs:
         run: ./mvnw -B package
 
   deploy:
+    runs-on: ubuntu-latest
     needs: build  
     steps:
       - name: Report Deploy
