@@ -34,7 +34,7 @@ jobs:
     needs: build  
     steps:
       - name: Report Deploy
-        uses: OpsLevel/report-deploy-github-action@v0.5.0
+        uses: OpsLevel/report-deploy-github-action@v0.6.0
         with:
           integration_url: ${{ secrets.OL_INTEGRATION_URL }}
-          service: "spring pet-service"
+          service: "ReportingService"
