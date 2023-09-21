@@ -5,6 +5,10 @@ name: Java CI with Maven
 
 on: 
   workflow_dispatch:
+    inputs:
+      my_input:
+        description: 'My Custom Input'
+        required: true
   push:
     branches:
       - main
@@ -28,7 +32,9 @@ jobs:
           cache: maven
       - name: Build with Maven Wrapper
         run: ./mvnw -B package
-
+      - name: Check Parameter
+        run: |
+          echo "My Custom Input: ${{ github.event.inputs.my_input }}"
   deploy:
     runs-on: ubuntu-latest
     needs: build  
